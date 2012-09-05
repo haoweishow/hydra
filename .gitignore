@@ -1,6 +1,16 @@
 *.class
+*.zip
 
 # Package Files #
 *.jar
 *.war
 *.ear
+
+#misc
+*.DS_Store
+*.swp
+*.swo
+
+# directories
+dist
+
