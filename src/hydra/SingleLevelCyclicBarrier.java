@@ -92,10 +92,9 @@ public class SingleLevelCyclicBarrier  {
 	   }//end method
 	}//end inner class
 
-	/** Inner class - a runnable calculator thread
-	 *
+	/** Inner class - a runnable compression thread that exhibits CPU oriented task
 	 */
-        class CompressionThread implements Runnable{
+    class CompressionThread implements Runnable{
 	   int id = 0;
 	   String source;
 
@@ -145,6 +144,7 @@ public class SingleLevelCyclicBarrier  {
 		      CompressionThread compression = new SingleLevelCyclicBarrier.CompressionThread();
 		      compression.id = i; //name the thread
 		      //TODO: change how is this file loaded. It should be from the classpath
+              // just keep in mind that compression thread will then need a file object
 		      compression.source = "/sample.pdf";
 		      new Thread( compression ).start();
 	        }//end for
@@ -163,6 +163,7 @@ public class SingleLevelCyclicBarrier  {
 		       int numberOfThreads = Integer.valueOf( args[0] );
 		       SingleLevelCyclicBarrier optimizerDemo = new SingleLevelCyclicBarrier( numberOfThreads );
 		       optimizerDemo.runCompressionThreads();
+               optimizerDemo.runCalculatorThreads();
 		       long end_time = System.currentTimeMillis();
 		       System.out.println( "Process of " + numberOfThreads +  
 			     " threads completed in " + (end_time - start_time)/1000 + " sec."  );
