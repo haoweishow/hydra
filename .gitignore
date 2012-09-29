@@ -2,9 +2,7 @@
 *.zip
 
 # Package Files #
-*.jar
-*.war
-*.ear
+build/
 
 #ignore for IDEA
 out
