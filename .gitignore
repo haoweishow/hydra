@@ -9,7 +9,8 @@
 #ignore for IDEA
 out
 .idea
-.iml
+.idea/
+*.iml
 
 #ignore for VIM
 .DS_Store
