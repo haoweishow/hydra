@@ -64,7 +64,7 @@ class SquareMatrixMultiplier {
         try {
             barrier.await();
         } catch (InterruptedException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
     }
 
